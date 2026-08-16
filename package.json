@@ -1,0 +1,34 @@
+{
+  "name": "@airdev/eslint",
+  "version": "0.0.0",
+  "description": "airdev project ESLint rules",
+  "main": "./index.js",
+  "files": [
+    "index.js",
+    "rules",
+    "utils",
+    "README.md"
+  ],
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "lint",
+    "rules"
+  ],
+  "scripts": {
+    "test": "node --test --experimental-test-isolation=none test/*.test.js",
+    "test:unit": "node --test --experimental-test-isolation=none test/*.test.js",
+    "test:coverage": "node --test --experimental-test-isolation=none --experimental-test-coverage --test-coverage-include=index.js --test-coverage-include=rules/*.js --test-coverage-include=utils/*.js test/*.test.js"
+  },
+  "license": "MIT",
+  "peerDependencies": {
+    "eslint": "^9.0.0 || ^10.0.0"
+  },
+  "dependencies": {
+    "typescript": "^5.9.3",
+    "minimatch": "^10.2.4"
+  },
+  "devDependencies": {
+    "eslint": "^10.0.3"
+  }
+}
