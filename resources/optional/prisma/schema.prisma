@@ -1,0 +1,92 @@
+// "@airdev/next": "seeded"
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+generator dbml {
+  provider = "prisma-dbml-generator"
+}
+
+datasource db {
+  provider = "cockroachdb"
+}
+
+// ─── Framework models (do not edit) ────────────────────────────────────────
+
+model NextauthAccount {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @map("refreshToken")
+  access_token      String? @map("accessToken")
+  expires_at        Int?    @map("expiresAt")
+  token_type        String? @map("tokenType")
+  scope             String?
+  id_token          String? @map("idToken")
+  session_state     String? @map("sessionState")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@index([userId])
+}
+
+model NextauthSession {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model NextauthVerificationToken {
+  identifier String
+  token      String
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+model SystemRequestCache {
+  id          String    @id
+  createdAt   DateTime  @default(now())
+  completedAt DateTime?
+  request     Json?
+  response    Json?
+
+  @@index([createdAt])
+}
+
+model SystemScheduledJob {
+  id          String    @id @default(cuid())
+  createdAt   DateTime  @default(now())
+  runsAt      DateTime
+  completedAt DateTime?
+  type        String
+  data        Json
+  executions  Json      @default("[]")
+
+  @@index([runsAt, type])
+}
+
+// ─── User ──────────────────────────────────────────────────────────────────
+
+model User {
+  id            String    @id @default(cuid())
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  name          String
+  email         String    @unique
+  emailVerified DateTime?
+  imageUrl      String?
+  isAdmin       Boolean   @default(false)
+
+  nextauthAccounts NextauthAccount[]
+  nextauthSessions NextauthSession[]
+}

@@ -1,0 +1,27 @@
+/* "@airdev/next": "managed" */
+
+import { callBackendJsonApi } from '@/airdev/frontend/lib/backend';
+
+import {
+<% entries.map((entry) => entry.name).forEach((name) => { -%>
+  <%= `${utils.toPascalCase(name)}Body` %>,
+  <%= `${utils.toPascalCase(name)}Response` %>,
+<% }); -%>
+} from '@/common/types/api/json';
+<% entries.map((entry) => entry.name).forEach((name) => { -%>
+
+async function <%= utils.toCamelCase(name) %>(
+  body: <%= `${utils.toPascalCase(name)}Body` %>,
+  options: RequestInit = {}
+): Promise<<%= `${utils.toPascalCase(name)}Response` %>> {
+  return await callBackendJsonApi('/api/json/<%= name %>', body, options);
+}
+<% }); -%>
+
+const JsonApiClient = {
+<% entries.map((entry) => entry.name).forEach((name) => { -%>
+  <%= utils.toCamelCase(name) %>,
+<% }); -%>
+};
+
+export default JsonApiClient;

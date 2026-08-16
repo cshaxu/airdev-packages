@@ -1,0 +1,59 @@
+{
+  "@airdev/next": "seeded",
+  "app": {
+    "id": "barebone",
+    "name": "barebone.",
+    "description": "Next.js App Template",
+    "ownerShort": "Nano Indies",
+    "owner": "Nano Indies LLC",
+    "email": "nanoindies@gmail.com",
+    "version": "0.0.1",
+    "logoUrl": "https://avatars.githubusercontent.com/u/5317739?v=4&size=64",
+    "welcomeText": "Sign in to start using the workspace.",
+    "categories": ["productivity"],
+    "keywords": ["nextjs", "airdev-next", "template"]
+  },
+  "defaults": { "apiBatchSize": 100, "pageSize": 50 },
+  "shell": {
+    "adminTabs": [{ "label": "Test", "href": "/admin/test" }],
+    "assets": { "logoSrc": "/logo.png", "iconSrc": "/favicon.ico" },
+    "routes": {
+      "homeHref": "/dashboard",
+      "disallowRobots": [],
+      "defaultSideNavCollapsedRoutes": ["/admin"]
+    },
+    "style": {
+      "color": "blue",
+      "font": { "src": "/airdev/Frutiger55Roman.woff2", "format": "woff2" }
+    }
+  },
+  "service": {
+    "local": {
+      "baseUrl": "http://localhost:3000",
+      "name": "localhost",
+      "rootDomain": "localhost:3000",
+      "titlePrefix": "Local"
+    },
+    "production": {
+      "baseUrl": "https://barebone-next.vercel.app",
+      "name": "barebone-production",
+      "rootDomain": "barebone-next.vercel.app",
+      "titlePrefix": "Production"
+    }
+  },
+  "data": {
+    "local": { "aws": { "s3Bucket": "barebone-local" } },
+    "production": { "aws": { "s3Bucket": "barebone-production" } }
+  },
+  "google": {
+    "oauthScopeOpenid": "openid",
+    "oauthScopeUserinfoEmail": "https://www.googleapis.com/auth/userinfo.email",
+    "oauthScopeUserinfoProfile": "https://www.googleapis.com/auth/userinfo.profile",
+    "oauthSigninScopes": [
+      "openid",
+      "https://www.googleapis.com/auth/userinfo.email",
+      "https://www.googleapis.com/auth/userinfo.profile"
+    ]
+  },
+  "posthog": { "apiToken": "", "apiHost": "https://us.posthog.com" }
+}

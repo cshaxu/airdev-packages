@@ -1,0 +1,144 @@
+/* "@airdev/next": "managed" */
+
+@layer base {
+  :root[data-shell-color='pink'] {
+    --accent-1: #fffafd;
+    --accent-2: #fff4fa;
+    --accent-3: #ffe8f4;
+    --accent-4: #ffd9ed;
+    --accent-5: #fbc9e4;
+    --accent-6: #efb5d5;
+    --accent-7: #de98c0;
+    --accent-8: #c86ea4;
+    --accent-9: #b43c82;
+    --accent-10: #9f2f72;
+    --accent-11: #ba3d85;
+    --accent-12: #561d3e;
+    --accent-inactive: #b43c8266; /* 40% opacity */
+
+    --accent-a1: #ff009904;
+    --accent-a2: #ff00a40b;
+    --accent-a3: #f9009d17;
+    --accent-a4: #f6009b26;
+    --accent-a5: #e6009036;
+    --accent-a6: #d100864a;
+    --accent-a7: #bf007b67;
+    --accent-a8: #b100758f;
+    --accent-a9: #9e0069c3;
+    --accent-a10: #8b005ecf;
+    --accent-a11: #a00069c2;
+    --accent-a12: #48002ee2;
+
+    --accent-contrast: #fff;
+    --accent-surface: #fff1f8cc;
+    --accent-indicator: #b43c82;
+    --accent-track: #b43c82;
+
+    --accent-primary: #ec4899;
+    --accent-dark: #5a3148;
+    --accent-dark-50: #5a314880; /* 50% opacity */
+    --accent-dark-75: #5a3148bf; /* 75% opacity */
+    --accent-bg: #fff8fc;
+    --accent-hover: #ffe9f5;
+    --accent-separator: #f8e0ef;
+
+    --primary-disabled: #f9a8d4;
+    --shell-link: #db2777;
+    --shell-link-hover: #be185d;
+    --shell-page-start: #fdf2f8;
+    --shell-page-mid: #fff8fc;
+    --shell-tint-50: #fdf2f8;
+    --shell-tint-50-70: #fdf2f8b3;
+    --shell-tint-100: #fce7f3;
+    --shell-tint-100-80: #fce7f3cc;
+    --shell-tint-200: #fbcfe8;
+    --shell-tint-300: #efb5d5;
+    --shell-tint-400: #de98c0;
+    --shell-tint-500: #c86ea4;
+    --shell-tint-600: #db2777;
+    --shell-tint-700: #be185d;
+    --shell-tint-800: #561d3e;
+    --shell-glow-start: #fbcfe899;
+    --shell-glow-end: #fce7f380;
+    --shell-shadow-tint: #fbcfe8aa;
+    --shell-hero-shadow: 0 24px 80px -48px rgba(236, 72, 153, 0.4);
+    --shell-panel-shadow: 0 18px 50px -40px rgba(86, 29, 62, 0.48);
+    --shell-auth-gradient-start: #db2777;
+    --shell-auth-gradient-end: #f9a8d4;
+    --shell-illustration-accent: #db2777;
+    --shell-illustration-ink: #9d174d;
+    --shell-nav-icon-dark: #ff9acc;
+    --shell-nav-text-dark: #ffe4f1;
+    --shell-nav-bg-dark: #2b1521;
+    --shell-nav-hover-dark: rgba(255, 154, 204, 0.16);
+    --shell-nav-separator-dark: rgba(255, 228, 241, 0.12);
+  }
+
+  :root.dark[data-shell-color='pink'],
+  :root.dark-theme[data-shell-color='pink'] {
+    --accent-1: #190f15;
+    --accent-2: #24131d;
+    --accent-3: #381629;
+    --accent-4: #4d1b37;
+    --accent-5: #632247;
+    --accent-6: #7a2d58;
+    --accent-7: #943a6c;
+    --accent-8: #b04982;
+    --accent-9: #ff7fb8;
+    --accent-10: #f76ba9;
+    --accent-11: #ffafd3;
+    --accent-12: #ffddea;
+
+    --accent-a1: #ff008009;
+    --accent-a2: #ff2a8b14;
+    --accent-a3: #ff40972b;
+    --accent-a4: #ff4a9f43;
+    --accent-a5: #ff56a35a;
+    --accent-a6: #ff67ac72;
+    --accent-a7: #ff79b38c;
+    --accent-a8: #ff88bba9;
+    --accent-a9: #ff87b8ff;
+    --accent-a10: #ff74adf8;
+    --accent-a11: #ffb3d6ff;
+    --accent-a12: #ffe1edff;
+
+    --accent-contrast: #340f23;
+    --accent-surface: #4b173680;
+    --accent-indicator: #ff7fb8;
+    --accent-track: #ff7fb8;
+
+    --accent-primary: #ff7fb8;
+    --accent-dark: #ffddea;
+    --accent-dark-50: #ffddea80; /* 50% opacity */
+    --accent-dark-75: #ffddeabf; /* 75% opacity */
+    --accent-bg: #20131a;
+    --accent-hover: #341825;
+    --accent-separator: #4f2038;
+
+    --primary-disabled: #943a6c;
+    --shell-link: #ffafd3;
+    --shell-link-hover: #ffddea;
+    --shell-page-start: #190f15;
+    --shell-page-mid: #24131d;
+    --shell-tint-50: #24131d;
+    --shell-tint-50-70: #24131db3;
+    --shell-tint-100: #381629;
+    --shell-tint-100-80: #381629cc;
+    --shell-tint-200: #632247;
+    --shell-tint-300: #7a2d58;
+    --shell-tint-400: #943a6c;
+    --shell-tint-500: #b04982;
+    --shell-tint-600: #ff7fb8;
+    --shell-tint-700: #ffafd3;
+    --shell-tint-800: #ffddea;
+    --shell-glow-start: #ff87b880;
+    --shell-glow-end: #4b173680;
+    --shell-shadow-tint: #180812c2;
+    --shell-hero-shadow: 0 24px 80px -48px rgba(255, 127, 184, 0.34);
+    --shell-panel-shadow: 0 18px 50px -40px rgba(0, 0, 0, 0.72);
+    --shell-auth-gradient-start: #7a2d58;
+    --shell-auth-gradient-end: #b04982;
+    --shell-illustration-accent: #ffafd3;
+    --shell-illustration-ink: #ffddea;
+  }
+}

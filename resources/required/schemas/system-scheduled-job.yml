@@ -1,0 +1,13 @@
+# "@airdev/next": "managed"
+
+name: SystemScheduledJob
+internal: true
+types:
+  - name: SystemScheduledJobExecution
+    import: '@/airdev/common/types/data/system-scheduled-job'
+fields:
+  - id: 1
+    name: executions
+    type: SystemScheduledJobExecution[]
+    strategy: primitive
+    cast: true

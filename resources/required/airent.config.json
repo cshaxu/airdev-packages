@@ -1,0 +1,204 @@
+{
+  "@airdev/next": "managed",
+  "type": "commonjs",
+  "schemaPath": "node_modules/.airent/schemas",
+  "entityPath": "src/backend/entities",
+  "generatedPath": "src/generated",
+  "contextImportPath": "@/airdev/framework/context",
+  "augmentors": [
+    "node_modules/@airent/prisma/resources/augmentor.js",
+    "node_modules/@airent/prisma/resources/esk-augmentor.js",
+    "node_modules/@airent/api/resources/augmentor.js",
+    "node_modules/@airent/api-next/resources/augmentor.js",
+    "node_modules/@airent/api-next-tanstack/resources/augmentor.js"
+  ],
+  "templates": [
+    {
+      "name": "node_modules/@airent/api/resources/type-template.ts.ejs",
+      "outputPath": "{api.typesPath}/{kababEntityName}.ts",
+      "skippable": true
+    },
+    {
+      "name": "node_modules/@airent/api/resources/dispatcher-template.ts.ejs",
+      "outputPath": "{generatedPath}/dispatchers/{kababEntityName}.ts",
+      "skippable": false
+    },
+    {
+      "name": "node_modules/@airent/api/resources/actions-template.ts.ejs",
+      "outputPath": "{generatedPath}/actions/{kababEntityName}.ts",
+      "skippable": false
+    },
+    {
+      "name": "node_modules/@airent/api/resources/service-interface-template.ts.ejs",
+      "outputPath": "{generatedPath}/services/{kababEntityName}.ts",
+      "skippable": false
+    },
+    {
+      "name": "node_modules/@airent/api/resources/service-template.ts.ejs",
+      "outputPath": "{api.server.servicePath}/{kababEntityName}.ts",
+      "skippable": true
+    },
+    {
+      "name": "node_modules/@airent/api/resources/search-service-template.ts.ejs",
+      "outputPath": "{api.server.servicePath}/{kababEntityName}-search.ts",
+      "skippable": true
+    },
+    {
+      "name": "node_modules/@airent/api/resources/client-template.ts.ejs",
+      "outputPath": "{generatedPath}/clients/{kababEntityName}.ts",
+      "skippable": false
+    },
+    {
+      "name": "node_modules/@airent/api-next/resources/server-handler-template.ts.ejs",
+      "outputPath": "{generatedPath}/handlers/{kababEntityName}.ts",
+      "skippable": false
+    },
+    {
+      "name": "node_modules/@airent/api-next/resources/server-cached-client-template.ts.ejs",
+      "outputPath": "{generatedPath}/server-clients/{kababEntityName}-cached.ts",
+      "skippable": false
+    },
+    {
+      "name": "node_modules/@airent/api-next/resources/server-client-template.ts.ejs",
+      "outputPath": "{generatedPath}/server-clients/{kababEntityName}.ts",
+      "skippable": false
+    },
+    {
+      "name": "node_modules/@airent/api-next/resources/server-create-one-template.ts.ejs",
+      "outputPath": "{apiNext.appPath}{apiNext.airentApiPath}/create-one-{kababEntityName}/route.ts",
+      "skippable": false
+    },
+    {
+      "name": "node_modules/@airent/api-next/resources/server-delete-one-template.ts.ejs",
+      "outputPath": "{apiNext.appPath}{apiNext.airentApiPath}/delete-one-{kababEntityName}/route.ts",
+      "skippable": false
+    },
+    {
+      "name": "node_modules/@airent/api-next/resources/server-get-many-template.ts.ejs",
+      "outputPath": "{apiNext.appPath}{apiNext.airentApiPath}/get-many-{kababEntitiesName}/route.ts",
+      "skippable": false
+    },
+    {
+      "name": "node_modules/@airent/api-next/resources/server-get-one-template.ts.ejs",
+      "outputPath": "{apiNext.appPath}{apiNext.airentApiPath}/get-one-{kababEntityName}/route.ts",
+      "skippable": false
+    },
+    {
+      "name": "node_modules/@airent/api-next/resources/server-get-one-safe-template.ts.ejs",
+      "outputPath": "{apiNext.appPath}{apiNext.airentApiPath}/get-one-{kababEntityName}-safe/route.ts",
+      "skippable": false
+    },
+    {
+      "name": "node_modules/@airent/api-next/resources/server-search-template.ts.ejs",
+      "outputPath": "{apiNext.appPath}{apiNext.airentApiPath}/search-{kababEntitiesName}/route.ts",
+      "skippable": false
+    },
+    {
+      "name": "node_modules/@airent/api-next/resources/server-update-one-template.ts.ejs",
+      "outputPath": "{apiNext.appPath}{apiNext.airentApiPath}/update-one-{kababEntityName}/route.ts",
+      "skippable": false
+    },
+    {
+      "name": "node_modules/@airent/api-next/resources/edge-client-template.ts.ejs",
+      "outputPath": "{generatedPath}/edge-clients/{kababEntityName}.ts",
+      "skippable": false
+    },
+    {
+      "name": "node_modules/@airent/api-next/resources/studio-template.tsx.ejs",
+      "outputPath": "{generatedPath}/airent-api-next-studio.tsx",
+      "skippable": false
+    },
+    {
+      "name": "node_modules/@airent/api-next-tanstack/resources/base-template.ts.ejs",
+      "outputPath": "{generatedPath}/tanstack-hooks/{kababEntityName}-base.ts",
+      "skippable": false
+    },
+    {
+      "name": "node_modules/@airent/api-next-tanstack/resources/types-template.ts.ejs",
+      "outputPath": "{generatedPath}/tanstack-hooks/{kababEntityName}-types.ts",
+      "skippable": false
+    },
+    {
+      "name": "node_modules/@airent/api-next-tanstack/resources/client-hooks-template.ts.ejs",
+      "outputPath": "{generatedPath}/tanstack-hooks/{kababEntityName}-client.ts",
+      "skippable": false
+    },
+    {
+      "name": "node_modules/@airent/api-next-tanstack/resources/server-hooks-template.ts.ejs",
+      "outputPath": "{generatedPath}/tanstack-hooks/{kababEntityName}-server.ts",
+      "skippable": false
+    },
+    {
+      "name": "node_modules/@airent/api-next-tanstack/resources/server-cached-hooks-template.ts.ejs",
+      "outputPath": "{generatedPath}/tanstack-hooks/{kababEntityName}-server-cached.ts",
+      "skippable": false
+    },
+    {
+      "name": "plugins/airent/prisma-models-template.ts.ejs",
+      "outputPath": "src/generated/prisma-models.ts",
+      "skippable": false
+    }
+  ],
+  "prisma": {
+    "extensionSchemaPath": "schemas",
+    "prismaImport": "import prisma from '@/airdev/backend/lib/prisma';",
+    "primitiveFields": "external",
+    "associationFields": "skip"
+  },
+  "api": {
+    "server": {
+      "servicePath": "src/backend/services/data",
+      "dispatcherConfigImportPath": "@/airdev/backend/lib/framework"
+    },
+    "client": {
+      "baseUrlImportPath": "@/airdev/config/public"
+    },
+    "typesPath": "src/common/types/data"
+  },
+  "apiNext": {
+    "appPath": "src/app",
+    "airentApiPath": "/api/data",
+    "handlerConfigImportPath": "@/airdev/backend/lib/framework",
+    "cronSourcePath": "src/backend/jobs/cron",
+    "cronApiPath": "/api/jobs",
+    "cronHandlerOptions": "{ requireCron: true }",
+    "debugSourcePath": "src/backend/debug",
+    "debugApiPath": "/api/debug",
+    "debugHandlerOptions": "{ requireInternal: true }",
+    "webhookSourcePath": "src/backend/webhooks",
+    "webhookApiPath": "/api/webhooks",
+    "templates": [
+      {
+        "name": "plugins/airent-api-next/client-sdk-json-template.ts.ejs",
+        "inputType": "folders",
+        "outputType": "file",
+        "inputPath": "src/app/api/json",
+        "outputPath": "src/generated/json-client.ts"
+      },
+      {
+        "name": "plugins/airent-api-next/server-api-inngest-route-template.ts.ejs",
+        "inputType": "files",
+        "outputType": "file",
+        "inputPath": "src/backend/jobs/background",
+        "outputPath": "src/app/api/inngest/route.ts"
+      },
+      {
+        "name": "plugins/airent-api-next/server-service-inngest-template.ts.ejs",
+        "inputType": "files",
+        "outputType": "file",
+        "inputPath": "src/backend/jobs/background",
+        "outputPath": "src/generated/inngest.ts"
+      },
+      {
+        "name": "plugins/airent-api-next/server-service-scheduler-template.ts.ejs",
+        "inputType": "files",
+        "outputType": "file",
+        "inputPath": "src/backend/jobs/scheduled",
+        "outputPath": "src/generated/scheduler.ts"
+      }
+    ]
+  },
+  "apiNextTanstack": {
+    "fieldRequestsImportPath": "@/frontend/types/data"
+  }
+}

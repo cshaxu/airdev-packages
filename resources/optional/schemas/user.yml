@@ -1,0 +1,41 @@
+# "@airdev/next": "seeded"
+
+name: User
+api:
+  methods:
+    search: '{ requireAdmin: true }'
+    serverGetOne: '{ next: { tags: [`users:${params.id}`] } }'
+    serverGetOneSafe: '{ next: { tags: [`users:${params.id}`] } }'
+    getOne: '{ requireLogin: false }'
+    getOneSafe: '{ requireLogin: false }'
+    updateOne:
+    deleteOne: '{ requireAdmin: true }'
+types:
+  - name: UserEmailPayload
+    import: '@/airdev/common/types/data/user'
+fields:
+  - id: 0
+    internal: true
+    name: isAdminRaw
+    aliasOf: isAdmin
+    type: boolean
+    strategy: primitive
+  - id: 1
+    name: isAdmin
+    type: boolean
+    strategy: computed
+  - id: 2
+    internal: true
+    name: verifiedEmail
+    type: string | null
+    strategy: computed
+  - id: 3
+    internal: true
+    name: emailPayload
+    type: UserEmailPayload
+    strategy: computedAsync
+  - id: 4
+    internal: true
+    name: thisUserId
+    type: string | null
+    strategy: computed

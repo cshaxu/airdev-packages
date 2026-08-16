@@ -1,0 +1,9 @@
+# "@airdev/next": "seeded"
+
+# internal - explicit
+
+NEXT_PUBLIC_BAREBONE_NEXT_DATA_ENVIRONMENT=op://DevEnv/$BAREBONE_NEXT_ENV_PENDING/DATA_ENVIRONMENT
+
+# nextauth - both
+
+NEXTAUTH_SECRET=op://DevEnv/$BAREBONE_NEXT_ENV_PENDING/NEXTAUTH_SECRET
