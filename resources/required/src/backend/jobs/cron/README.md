@@ -6,7 +6,7 @@ This document is a guide for developing Cron jobs.
 
 ## 1. Create your Cron job
 
-- Naviagte to `src/backend/jobs/cron`
+- Navigate to `src/backend/jobs/cron`
 - Create a new `.ts` file. Make sure the file name is in kabab case,
   and it matters for all the wiring logic described in step 2.
 - Implement your Cron job following this format:
