@@ -1,0 +1,22 @@
+{
+  "name": "@airdev/tool",
+  "version": "0.0.0",
+  "description": "airdev project setup tool",
+  "scripts": { "build": "crlf --set=LF bin/*" },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cshaxu/airdev-packages.git"
+  },
+  "keywords": [
+    "airdev",
+    "scaffold",
+    "setup",
+    "tool"
+  ],
+  "author": "cshaxu",
+  "license": "MIT",
+  "bugs": { "url": "https://github.com/cshaxu/airdev-packages/issues" },
+  "homepage": "https://github.com/cshaxu/airdev-packages#readme",
+  "files": ["bin"],
+  "devDependencies": {"crlf": "^1.1.1"}
+}

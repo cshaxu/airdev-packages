@@ -1,0 +1,14 @@
+{
+  "name": "@airdev/next",
+  "version": "0.0.0",
+  "type": "module",
+  "files": ["resources", "scripts", "README.md"],
+  "bin": {
+    "airdev-next": "./scripts/generate.mjs"
+  },
+  "scripts": {
+    "generate": "node ./scripts/generate.mjs",
+    "build": "node ./scripts/build.mjs",
+    "prepublishOnly": "npm run build"
+  }
+}

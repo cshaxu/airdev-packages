@@ -1,0 +1,11 @@
+/* "@airdev/next": "managed" */
+
+export const prismaModels = {
+<% Object.values(entityMap).filter((e) => e.isPrisma !== false).forEach((entity) => { -%>
+  <%= entity.aliasOf ?? entity.name %>: [
+  <%_ entity.prisma.tableFields.filter((tfn) => utils.isPrimitiveField(entity.fields.find((f) => f.name === tfn) ?? {})).forEach((tfn) => { -%>
+    '<%= tfn %>',
+  <%_ }); -%>
+  ],
+<% }); -%>
+};

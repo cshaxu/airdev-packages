@@ -1,0 +1,14 @@
+{
+  "name": "airdev-packages-js",
+  "private": true,
+  "version": "0.0.0",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "split:dry-run": "node ./scripts/split-packages.js --dry-run",
+    "wait:split": "node ./scripts/wait-for-split-packages.js"
+  }
+}

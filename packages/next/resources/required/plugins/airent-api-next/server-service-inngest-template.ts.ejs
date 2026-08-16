@@ -1,0 +1,16 @@
+/* "@airdev/next": "managed" */
+
+import * as InngestSdk from '@/airdev/backend/sdks/inngest';
+
+<% entries.map((entry) => entry.name).forEach((name) => { -%>
+import {
+  Params as <%= `${utils.toPascalCase(name)}Params` %>,
+  event as <%= `${utils.toPascalCase(name)}Event` %>,
+} from '@/backend/jobs/background/<%= name %>';
+<% }); -%>
+<% entries.map((entry) => entry.name).forEach((name) => { -%>
+
+export const <%= `enqueue${utils.toPascalCase(name)}Event` %> =
+  (data: <%= `${utils.toPascalCase(name)}Params` %>) =>
+    InngestSdk.enqueue(<%= `${utils.toPascalCase(name)}Event` %>, data);
+<% }); -%>

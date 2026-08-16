@@ -1,0 +1,28 @@
+/* "@airdev/next": "managed" */
+
+import { serve } from 'inngest/next';
+import * as InngestSdk from '@/airdev/backend/sdks/inngest';
+
+<% entries.map((entry) => entry.name).forEach((name) => { -%>
+import {
+  event as <%= `${utils.toPascalCase(name)}Event` %>,
+  executor as <%= utils.toCamelCase(name) %>
+} from '@/backend/jobs/background/<%= name %>';
+<% }); -%>
+
+export const maxDuration = 60;
+<% entries.map((entry) => entry.name).forEach((name) => { -%>
+
+const <%= `${utils.toCamelCase(name)}EventHandler` %> = InngestSdk.createFunction(
+  <%= `${utils.toPascalCase(name)}Event` %>,
+  <%= utils.toCamelCase(name) %>
+);
+<% }); -%>
+
+const functions = [
+<% entries.map((entry) => entry.name).forEach((name) => { -%>
+  <%= `${utils.toCamelCase(name)}EventHandler` %>,
+<% }); -%>
+];
+
+export const { GET, POST, PUT } = serve({client: InngestSdk.inngest, functions });

@@ -1,0 +1,27 @@
+/* "@airdev/next": "managed" */
+
+import { Context } from '@/airdev/framework/context';
+import SystemScheduledJobService from '@/airdev/backend/services/data/system-scheduled-job';
+import { SystemScheduledJobExecutor } from '@/airdev/common/types/data/system-scheduled-job';
+
+<% entries.map((entry) => entry.name).forEach((name) => { -%>
+import {
+  Params as <%= `${utils.toPascalCase(name)}Params` %>,
+  event as <%= `${utils.toPascalCase(name)}Event` %>,
+  executor as <%= utils.toCamelCase(name) %>
+} from '@/backend/jobs/scheduled/<%= name %>';
+<% }); -%>
+
+export const SCHEDULED_JOB_EXECUTOR_MAP: Map<string, SystemScheduledJobExecutor> = 
+// @ts-ignore
+  new Map([
+<% entries.map((entry) => entry.name).forEach((name) => { -%>
+  [<%= `${utils.toPascalCase(name)}Event` %>, <%= utils.toCamelCase(name) %>],
+<% }); -%>
+]);
+<% entries.map((entry) => entry.name).forEach((name) => { -%>
+
+export const <%= `schedule${utils.toPascalCase(name)}Event` %> =
+  (data: <%= `${utils.toPascalCase(name)}Params` %>, runsAt: Date, context: Context) =>
+    SystemScheduledJobService.createOne(<%= `${utils.toPascalCase(name)}Event` %>, data, runsAt, context);
+<% }); -%>
