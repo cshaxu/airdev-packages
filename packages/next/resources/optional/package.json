@@ -29,10 +29,10 @@
   },
   "dependencies": {
     "@ai-sdk/openai": "^3.0.41",
-    "@airent/api": "github:cshaxu/airent-api-js#ee8cea6f134851f3bff4f8b41db04101a765f3b1",
-    "@airent/api-next": "github:cshaxu/airent-api-next-js#285af075c8366cb8ba440a8010e8c3191ec83817",
-    "@airent/api-next-tanstack": "github:cshaxu/airent-api-next-tanstack-js#4674dfe81a380840bd1aee8db7507d2f8641351b",
-    "@airent/prisma": "github:cshaxu/airent-prisma-js#0e3216698f7d917a2608da0f494570f59dc120af",
+    "@airent/api": "github:cshaxu/airent-plugins#0bc8500bffbf755008572f35e12b23e620fbb44b",
+    "@airent/api-next": "github:cshaxu/airent-plugins#2d399ec9b1a04046d8383e98273963c5a7424987",
+    "@airent/api-next-tanstack": "github:cshaxu/airent-plugins#664be05987984ef4bacc39dce7c5d27b066b20b3",
+    "@airent/prisma": "github:cshaxu/airent-plugins#c3c5cda40d12d18f9fe33adf533d54010223ad4e",
     "@aws-sdk/client-s3": "^3.1013.0",
     "@aws-sdk/client-textract": "^3.1013.0",
     "@aws-sdk/s3-presigned-post": "^3.1013.0",
@@ -87,8 +87,8 @@
     "zustand": "^5.0.12"
   },
   "devDependencies": {
-    "@airdev/eslint": "file:../../../eslint",
-    "@airdev/tool": "file:../../../tool",
+    "@airdev/eslint": "github:cshaxu/airdev-packages#665af8d32f7ff193bc7e12fe976f81f72ad1c704",
+    "@airdev/tool": "github:cshaxu/airdev-packages#c57b0193ce9277fb35a01590eecc5d80a6638258",
     "@dbml/core": "^6.4.0",
     "@eslint/eslintrc": "^3.3.5",
     "@eslint/js": "^9.39.4",
