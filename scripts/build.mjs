@@ -32,6 +32,7 @@ function resolveSourceRepoRoot() {
     process.env.BAREBONE_NEXT_REPO_PATH,
     process.env.AIRDEV_NEXT_SOURCE_REPO_PATH,
     path.resolve(repoRoot, '..', '..', 'repos', 'barebone-next'),
+    path.resolve(repoRoot, '..', '..', '..', '..', 'repos', 'barebone-next'),
   ].filter(Boolean);
 
   for (const candidate of candidates) {
@@ -45,7 +46,7 @@ function resolveSourceRepoRoot() {
     [
       'Unable to locate barebone-next source repo.',
       'Set BAREBONE_NEXT_REPO_PATH or AIRDEV_NEXT_SOURCE_REPO_PATH,',
-      'or place barebone-next at ../../repos/barebone-next relative to this package.',
+      'or place barebone-next at a supported relative location.',
     ].join(' ')
   );
 }
